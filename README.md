@@ -13,7 +13,7 @@ C2 beaconing is commonly seen when malware or botnets repeatedly communicate wit
 ## 🖥️ Dashboard Preview
 <img width="1600" height="760" alt="WhatsApp Image 2026-05-01 at 2 46 14 PM" src="https://github.com/user-attachments/assets/2ab44173-c9d1-46df-8bae-581e1c147ec5" />
 
-🎯 Objectives
+## 🎯 Objectives
 
 Detect suspicious C2 beaconing behavior using flow-based network data
 
