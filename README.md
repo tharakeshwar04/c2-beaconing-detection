@@ -31,7 +31,7 @@ Simulate a SOC-style dashboard for security investigation
 
 Export flagged results as downloadable CSV reports
 
-📊 Dataset
+## 📊 Dataset
 
 CTU-13 Botnet Dataset
 
@@ -49,7 +49,7 @@ Legitimate communication
 
 The dataset is useful for studying botnet behavior because it contains realistic infected-host communication patterns. In this project, the dataset is used to identify repeated outbound communication that may indicate C2 beaconing.
 
-Data Preprocessing
+## Data Preprocessing
 
 The preprocessing pipeline converts raw flow data into a standard format that can be used by the model.
 
@@ -92,7 +92,7 @@ Grouped flows into communication pairs
 
 Filtered pairs with too few flows for meaningful beaconing analysis
 
-🔗 Pair-Level Feature Engineering
+## 🔗 Pair-Level Feature Engineering
 
 The system groups network flows using the following communication pair: src_ip, dst_ip, dst_port, protocol
 For each communication pair, the system extracts behavioral features such as:
@@ -121,8 +121,8 @@ Packet variation
 
 These features help identify whether a host is contacting another system repeatedly at regular intervals, which is a common sign of C2 beaconing.
 
-🧠 Model Used
-🔹 Random Forest Classifier
+## 🧠 Model Used
+## 🔹 Random Forest Classifier
 
 The main machine learning model used in this project is Random Forest.
 
@@ -139,7 +139,7 @@ It can identify patterns across timing and traffic-based features
 The model outputs a probability score for each communication pair.
 rf_prob = probability of suspicious beaconing behavior
 
-📈 Detection Logic
+## 📈 Detection Logic
 
 The dashboard uses the model probability score to determine whether a communication pair should be flagged.
 
@@ -151,7 +151,7 @@ Default threshold: 0.50
 
 The threshold can be adjusted in the dashboard. A lower threshold increases sensitivity, while a higher threshold makes detection stricter.
 
-🚦 Severity Levels
+## 🚦 Severity Levels
 
 The dashboard assigns severity based on the Random Forest probability score.
 
@@ -162,7 +162,7 @@ The dashboard assigns severity based on the Random Forest probability score.
 | 0.50 – 0.69    | Medium   |
 | Below 0.50     | Low      |
 
-🔍 Reason Codes
+## 🔍 Reason Codes
 
 The dashboard generates reason codes to explain why a communication pair may be suspicious.
 
@@ -186,7 +186,7 @@ Flagged by model-based multi-feature pattern
 
 These reason codes make the model output easier to understand and more useful for SOC-style analysis.
 
-🚨 Key Insight
+## 🚨 Key Insight
 
 C2 beaconing is difficult to detect by looking at only individual packets or single flows.
 
@@ -198,7 +198,7 @@ Instead of analyzing each flow separately, this system groups traffic into commu
 
 This makes the dashboard more useful for SOC-style investigation because it focuses on patterns, not just individual events.
 
-🚀 Future Improvements
+## 🚀 Future Improvements
 
 Add real-time traffic ingestion
 
@@ -220,13 +220,13 @@ Deploy the dashboard using Hugging Face Spaces or Streamlit Cloud
 
 Add authentication for SOC-style deployment
 
-👤 Author
+## 👤 Author
 
 Tharakeshwar Navarathinam
 Penn State University
 Cybersecurity Analytics and Operations
 
-🧠 Final Takeaway
+## 🧠 Final Takeaway
 
 This project demonstrates how machine learning can be used to detect possible C2 beaconing behavior in network traffic.
 
